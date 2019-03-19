@@ -73,8 +73,9 @@ class plugin_cron_bill_queue {
 }
 
 Ecjia_PluginManager::extend('cron_bill_queue', function() {
+    RC_Locale::loadPluginTextdomain('cron_bill_queue');
     require_once RC_Plugin::plugin_dir_path(__FILE__) . 'cron_bill_queue.class.php';
-        return new cron_bill_queue();
+    return new cron_bill_queue();
 });
 
 RC_Plugin::register_activation_hook(__FILE__, array('plugin_cron_bill_queue', 'install'));
